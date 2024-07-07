@@ -22,10 +22,6 @@ html, body {
     transition: filter 0.2s ease; /* انتقال سلس عند تغيير التمويه */
 }
 
-.background.blur {
-    filter: blur(4px); /* تطبيق التمويه عند إضافة كلاس "blur" */
-}
-
 .logo {
     width: 400px; /* تعديل عرض الشعار حسب الحاجة */
     height: auto; /* الارتفاع يتكيف تلقائيًا مع العرض */
@@ -36,10 +32,6 @@ html, body {
     z-index: 1; /* ضمان أن الشعار يظهر فوق الخلفية */
     filter: blur(0px); /* عدم وجود تمويه للشعار بشكل افتراضي */
     transition: filter 0.3s ease; /* انتقال سلس عند تغيير التمويه */
-}
-
-.logo.blur {
-    filter: blur(10px); /* تطبيق التمويه على الشعار عند إضافة كلاس "blur" */
 }
 
 .download-button {
@@ -55,8 +47,8 @@ html, body {
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف */
     position: absolute;
-    bottom: 400px; /* المسافة من الأسفل */
-    left: 19%;
+    bottom: 255px; /* المسافة من الأسفل */
+    left: 30%;
     transform: translateX(-9%);
     z-index: 1; /* ضمان أن الزر يظهر فوق الخلفية */
 }
@@ -110,4 +102,20 @@ html, body {
 
 .download-button.loading .text {
     visibility: hidden; /* إخفاء النص عند التحميل */
+}
+
+.video-container {
+    position: absolute;
+    top: 70%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* ضمان أن الفيديو يظهر فوق الخلفية */
+}
+
+.video-frame {
+    transition: filter 0.5s ease; /* انتقال سلس عند تغيير التمويه */
+}
+
+.blur {
+    filter: blur(4px); /* تطبيق التمويه على العناصر عند إضافة كلاس "blur" */
 }

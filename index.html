@@ -12,23 +12,39 @@
 <body>
     <div class="background"></div>
     <div class="container">
-        <img src="paste ur logo" alt="logo" class="logo">
         <a href="#" class="download-button" onclick="handleDownload()">
             <span class="text">Download</span>
         </a>
+    </div>
+
+    <div class="video-container">
+        <iframe class="video-frame" width="640" height="350" src="https://www.youtube.com/embed/FohCHZkcCs4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const downloadButton = document.querySelector('.download-button');
             const background = document.querySelector('.background');
+            const videoFrame = document.querySelector('.video-frame');
 
             downloadButton.addEventListener('mouseover', () => {
                 background.classList.add('blur');
+                videoFrame.classList.add('blur');
             });
 
             downloadButton.addEventListener('mouseout', () => {
                 background.classList.remove('blur');
+                videoFrame.classList.remove('blur');
+            });
+
+            videoFrame.addEventListener('mouseover', () => {
+                background.classList.add('blur');
+                downloadButton.classList.add('blur');
+            });
+
+            videoFrame.addEventListener('mouseout', () => {
+                background.classList.remove('blur');
+                downloadButton.classList.remove('blur');
             });
         });
 
@@ -37,7 +53,7 @@
             button.classList.add('loading'); // إضافة كلاس التحميل
             // محاكاة اكتمال التنزيل
             setTimeout(function() {
-                window.location.href = 'your_download_link'; // استبدل هذا بالرابط الفعلي للتحميل
+                window.location.href = 'your_download_link'; // استبدل هذا بالرابط الفعلي للتنزيل
                 button.classList.remove('loading'); // إزالة كلاس التحميل بعد اكتمال التنزيل
             }, 2000); // محاكاة وقت تحميل لمدة 2 ثانية، يمكن تعديلها حسب الحاجة
         }
