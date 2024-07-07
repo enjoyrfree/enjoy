@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    overflow: hidden; /* لمنع التمرير إذا كانت الخلفية أكبر من الشاشة */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/background.jpg'); /* مسار النسبي إلى الصورة */
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px); /* عدم وجود تمويه للخلفية بشكل افتراضي */
+    z-index: -1; /* لضمان أن الخلفية تكون في الخلف */
+    transition: filter 0.2s ease; /* انتقال سلس عند تغيير التمويه */
+}
+
+.background.blur {
+    filter: blur(4px); /* تطبيق التمويه عند إضافة كلاس "blur" */
+}
+
+.logo {
+    width: 400px; /* تعديل عرض الشعار حسب الحاجة */
+    height: auto; /* الارتفاع يتكيف تلقائيًا مع العرض */
+    position: absolute;
+    top: -60px; /* تعديل المسافة من الأعلى حسب الحاجة */
+    left: 10%;
+    transform: translateX(-10%);
+    z-index: 1; /* ضمان أن الشعار يظهر فوق الخلفية */
+    filter: blur(0px); /* عدم وجود تمويه للشعار بشكل افتراضي */
+    transition: filter 0.3s ease; /* انتقال سلس عند تغيير التمويه */
+}
+
+.logo.blur {
+    filter: blur(10px); /* تطبيق التمويه على الشعار عند إضافة كلاس "blur" */
+}
+
+.download-button {
+    display: inline-block;
+    padding: 20px 40px; /* زيادة الحجم بزيادة الحشوات */
+    font-size: 47px; /* تحديد حجم النص */
+    color: rgb(255, 0, 0);
+    background-color: rgb(32, 32, 32);
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    position: absolute;
+    bottom: 400px; /* المسافة من الأسفل */
+    left: 19%;
+    transform: translateX(-9%);
+    z-index: 1; /* ضمان أن الزر يظهر فوق الخلفية */
+}
+
+.download-button:hover {
+    background-color: rgb(49, 49, 49);
+    transform: scale(1.05);
+}
+
+.download-button:active {
+    background-color: rgb(32, 32, 32);
+    transform: scale(0.95);
+}
+
+.download-button:focus {
+    outline: none; /* إزالة الحدود الافتراضية للتركيز */
+    background-color: rgb(49, 49, 49);
+}
+
+.download-button.loading {
+    pointer-events: none; /* تعطيل النقر أثناء التحميل */
+    background-color: rgb(32, 32, 32);
+}
+
+.download-button.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ff0000;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.download-button .text {
+    visibility: visible; /* إظهار النص بشكل افتراضي */
+}
+
+.download-button.loading .text {
+    visibility: hidden; /* إخفاء النص عند التحميل */
+}

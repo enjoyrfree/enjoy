@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enjoy.rfree</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- تعديل المسار النسبي لملف الـ CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <img src="paste ur logo" alt="logo" class="logo">
+        <a href="#" class="download-button" onclick="handleDownload()">
+            <span class="text">Download</span>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const downloadButton = document.querySelector('.download-button');
+            const background = document.querySelector('.background');
+
+            downloadButton.addEventListener('mouseover', () => {
+                background.classList.add('blur');
+            });
+
+            downloadButton.addEventListener('mouseout', () => {
+                background.classList.remove('blur');
+            });
+        });
+
+        function handleDownload() {
+            var button = document.querySelector('.download-button');
+            button.classList.add('loading'); // إضافة كلاس التحميل
+            // محاكاة اكتمال التنزيل
+            setTimeout(function() {
+                window.location.href = 'your_download_link'; // استبدل هذا بالرابط الفعلي للتحميل
+                button.classList.remove('loading'); // إزالة كلاس التحميل بعد اكتمال التنزيل
+            }, 2000); // محاكاة وقت تحميل لمدة 2 ثانية، يمكن تعديلها حسب الحاجة
+        }
+    </script>
+</body>
+</html>
