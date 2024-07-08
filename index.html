@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enjoy.rfree</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- تعديل المسار النسبي لملف الـ CSS -->
+    <link rel="stylesheet" href="css/styles.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="video-container">
-        <iframe class="video-frame" width="640" height="350" src="https://www.youtube.com/embed/FohCHZkcCs4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video-frame" width="870" height="550" src="https://player.vimeo.com/video/980196347?h=2b3d7155e7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <script>
@@ -50,12 +50,12 @@
 
         function handleDownload() {
             var button = document.querySelector('.download-button');
-            button.classList.add('loading'); // إضافة كلاس التحميل
-            // محاكاة اكتمال التنزيل
+            button.classList.add('loading'); 
+            
             setTimeout(function() {
-                window.location.href = 'your_download_link'; // استبدل هذا بالرابط الفعلي للتنزيل
-                button.classList.remove('loading'); // إزالة كلاس التحميل بعد اكتمال التنزيل
-            }, 2000); // محاكاة وقت تحميل لمدة 2 ثانية، يمكن تعديلها حسب الحاجة
+                window.location.href = 'https://fs3.fastupload.io/e69d60c026ec4227/Enjoy.rfree.zip?download_token=f934055869715b8181bb6fccf1ece475c3d77c7a586884ba9daef690f6e41bea'; // استبدل هذا بالرابط الفعلي للتنزيل
+                button.classList.remove('loading'); 
+            }, 3000); 
         }
     </script>
 </body>
